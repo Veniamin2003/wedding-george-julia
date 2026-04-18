@@ -1,6 +1,16 @@
 mixin Bottom()
     .o-bottom
-        .o-bottom__title Если у вас остались вопросы, <br>обращайтесь к нам
-        .o-bottom__contacts
-            span Иосиф, <a href="tel:+799379598048">+7 (937) 959-80-48</a>
-            span Надежда, <a href="tel:+79992083109">+7 (999) 208-31-09</a>
+        .o-bottom__picture 
+            .o-bottom__vector-top 
+                img(src="/img/vectors/bottom-top.svg")
+            img(src="/img/bottom.webp")
+            .o-bottom__vector-btm 
+                img(src="/img/vectors/bottom-btm.svg")
+
+        .o-bottom__content.w-container
+            +Title('2').o-bottom__title Если у вас остались вопросы, <br>обращайтесь к нам
+            .o-bottom__contacts
+                span Иосиф, <a href="tel:+79522402152">+7 (952) 240-21-52</a>
+                span Надежда, <a href="tel:+79092955403">+7 (909) 295-54-03</a>
+
+        

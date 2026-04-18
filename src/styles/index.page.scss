@@ -1,3 +1,9 @@
 .p-index {
     background-color: var(--white-color);
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        // gap: 30px;
+    }
 }

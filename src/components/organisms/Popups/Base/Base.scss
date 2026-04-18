@@ -15,11 +15,13 @@
     background: var(--white-color);
     overflow-y: auto;
     scrollbar-width: 0px;
+    visibility: hidden;
 
     &.isVisible {
         opacity: 1;
         transform: translate(-50%,50%);
         pointer-events: all;
+        visibility: visible;
     }
 
     &::-webkit-scrollbar {
@@ -63,7 +65,7 @@
             height: 30px;
         }
     }
-
+    
     &--normal {
         max-width: 660px;
 
@@ -76,6 +78,18 @@
 
         @media (max-width: 1023px) {
             padding: 50px 35px 65px;
+        }
+    }
+    &--all {
+        height: 100%;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 0;
+        background: rgba(246, 245, 241, 0.7);
+        backdrop-filter: blur(3px);
+        
+        @media (max-width: 1023px) {
+            padding: 91px 25px 80px;
         }
     }
 }

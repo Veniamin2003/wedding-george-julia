@@ -1,7 +1,7 @@
 .a-btn {
-    height: 45px;
+    height: 40px;
     display: inline-flex;
-    padding: 12px 35px 13px;
+    padding: 12px 35px 11px;
     justify-content: center;
     align-items: center;
     font-size: 14px;
@@ -9,21 +9,21 @@
     font-weight: 400;
     line-height: normal;
     cursor: pointer;
-    background-color: var(--white-bg-color);
-    color: var(--primary-lighter-color);
-    border: 1px solid var(--primary-lighter-color);
+    color: var(--white-color);
+    background-color: transparent;
+    border: 1px solid var(--white-color-60);
     border-radius: 12px;
 
     &:active {
-        background-color: var(--primary-light-color);
-        color: var(--white-bg-color);
+        background-color: var(--white-color);
+        color: var(--basic-color);
     }
 
     @media (hover: hover) {
 
         &:hover {
-            background-color: var(--primary-light-color);
-            color: var(--white-bg-color);
+            background-color: var(--white-color);
+            color: var(--basic-color);
         }
     }
 

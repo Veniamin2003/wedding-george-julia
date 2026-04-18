@@ -1,0 +1,46 @@
+mixin RegistrationPopup
+    +BasePopup('registration', 'all')
+        form.o-registration-popup.js-form
+            .o-registration-popup__top
+                .o-registration-popup__text
+                    +Title('2').o-registration-popup__title Анкета гостя
+                .o-registration-popup__name.js-input__name
+                    +Input('Имя и фамилия')
+
+            .o-registration-popup__items
+                .m-question.js-question(data-has-input="true")
+                    p.m-question__text.js-question__text Планируете ли быть на свадьбе?
+                    .m-question__items
+                        .m-question__wrap
+                            label.m-question__label
+                                input(type="radio" name="q1" value="да" checked).js-question__children
+                                span.m-question__custom-radio
+                                | обязательно буду
+                            .m-question__input.js-question__input
+                                +Input('Количество гостей, которые будут с вами', false, true)
+        
+                        label.m-question__label
+                            input(type="radio" name="q1" value="нет")
+                            span.m-question__custom-radio
+                            | к сожалению, не смогу присутствовать
+
+                .m-question.js-question(data-has-input="true")
+                    p.m-question__text.js-question__text Будет ли у вас участие-поздравление?
+                    .m-question__items
+                        label.m-question__label
+                            input(type="radio" name="q2" value="нет")
+                            span.m-question__custom-radio
+                            | нет
+
+                        .m-question__wrap
+                            label.m-question__label
+                                input(type="radio" name="q2" value="да" checked).js-question__children
+                                span.m-question__custom-radio
+                                | да (впишите ниже, какое именно)
+                            .m-question__input.js-question__input
+                                +Input('Место для участия-поздравления', true)
+
+            +Btn(type="submit").o-registration-popup__btn Отправить
+            .o-registration-popup__exit.js-popup__close Выйти
+
+            .o-registration-popup__error.js-popup__error Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, deleniti?

@@ -7,8 +7,8 @@ import { runScriptOnUserEvent } from "./modules/runScriptOnUserEvent.js";
 import { scrollToTop } from "./modules/scrollToTop.js";
 import { setAppHeight } from "./modules/setAppHeight.js";
 import { urlGenerator } from "./modules/urlGenerator.js";
-import {InputHide, InputMasks, Registration} from "../components/organisms/Registration/Registration.js";
-import {AnimationHands, TimeCounter} from "../components/organisms/About/About.js";
+import { InputMasks, Registration} from "../components/organisms/Popups/Registration/Registration.js";
+import {TimeCounter} from "../components/organisms/About/About.js";
 
 document.addEventListener("DOMContentLoaded", function () {
 	try {
@@ -26,11 +26,11 @@ document.addEventListener("DOMContentLoaded", function () {
 		// Организмы
 		umGlobal.togglePopup = togglePopup();
 
-		Registration();
-		InputHide();
-		InputMasks();
 		TimeCounter();
-		AnimationHands();
+
+		Registration();
+		// InputHide();
+		InputMasks();
 
 		// Всякое полезное, описание функций внутри модулей
 		umGlobal.initContainerLink = initContainerLink;
