@@ -1,0 +1,19 @@
+mixin Header
+    header.o-header.js-header
+        +Container.o-header__container
+            a(href="/").o-header__logo
+                img(src="/img/um-logo.svg")
+            nav.o-header__nav
+                +Link(href="#") Пункт
+                +Link(href="#") Пункт
+                +Link(href="#") Пункт
+                +Link(href="#") Пункт
+                +Link(href="#") Пункт
+            .o-header__right
+                .o-header__contacts.isHiddenTab.isHiddenMob
+                    +Link(href="mailto:mail@yandex.ru") mail@yandex.ru
+                    +Link(href="tel:+7 (999) 999-99-99") +7 (999) 999-99-99
+                button.o-header__burger.js-openMobileMenu
+                    div 
+                    div 
+                    div 

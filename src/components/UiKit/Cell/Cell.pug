@@ -1,0 +1,5 @@
+mixin UiCell(description, isDark = false)
+    .ui-cell(class!=isDark&&'ui-cell--dark')
+        pre !{description}
+        if block 
+            block

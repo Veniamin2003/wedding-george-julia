@@ -1,0 +1,11 @@
+@import "../components/UiKit/Nav/Nav";
+@import "../components/UiKit/Container/Container";
+@import "../components/UiKit/Grid/Grid";
+@import "../components/UiKit/Cell/Cell";
+@import "../components/UiKit/Section/Section";
+@import "../components/UiKit/Sections/Sections";
+
+.ui-kit {
+    max-width: 100%;
+    padding: var(--headerHeight) 0 var(--footerIndent);   
+}

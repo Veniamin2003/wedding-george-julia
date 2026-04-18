@@ -1,0 +1,89 @@
+.o-cookie {
+    //display: none;
+    max-width: 540px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+    transform: translateX(150%);
+    transition: var(--defaultTransition);
+    background: var(--white-color);
+    border: solid var(--grey-light-color);
+    border-width: 1px 0 1px 1px;
+
+    @media (max-width: 1023px) {
+
+    }
+    @media (max-width: 767px) {
+        max-width: 100%;
+        border-width: 1px 0 0 0;
+    }
+
+    &__inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 20px 30px 25px;
+
+        @media (max-width: 767px) {
+            padding: 12px 15px 15px;
+        }
+    }
+
+    button {
+        padding: 0;
+        border: none;
+        font: inherit;
+        color: inherit;
+        background-color: transparent;
+        /* отображаем курсор в виде руки при наведении; некоторые
+        считают, что необходимо оставлять стрелочный вид для кнопок */
+        cursor: pointer;
+    }
+
+    a {
+        color: var(--primary-color);
+        font-weight: 500;
+    }
+
+    & svg {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        fill: var(--basic-color);
+
+        @media (max-width: 767px) {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &__text {
+        max-width: 80%;
+
+        @media (max-width: 767px) {
+            font-size: 14px;
+            line-height: 130%;
+            max-width: 95%;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+
+        @media (max-width: 1023px) {
+
+        }
+        @media (max-width: 767px) {
+            top: 0;
+            bottom: 0;
+        }
+    }
+
+    &.isVisible {
+        transform: translateX(0);
+    }
+}

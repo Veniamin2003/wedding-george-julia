@@ -1,0 +1,34 @@
+mixin About
+    .o-about
+        .o-about__content
+            .o-about__time
+                +Title('3').o-about__time-title До дня торжества
+                .o-about__time-items
+                    .o-about__time-item
+                        .o-about__time-count.js-about-time__day 0
+                        .o-about__time-desc.js-about-label__day день
+                    .o-about__time-item
+                        .o-about__time-count.js-about-time__hour 0
+                        .o-about__time-desc.js-about-label__hour часа
+                    .o-about__time-item
+                        .o-about__time-count.js-about-time__minute 0
+                        .o-about__time-desc.js-about-label__minute минут
+
+            .o-about__block
+                .o-about__invite
+                    .o-about__invite-title Дорогие родные и близкие!
+                    .o-about__invite-desc Приглашаем вас разделить радость особенного для нас события — <br>нашей свадьбы!
+
+                .o-about__bottom
+                    .o-about__bottom-text До <b>20 сентября</b> подтвердите <br>своё присутствие! <br>Заполняйте анкету по отдельности, <br>чтобы мы лучше поняли каждого
+                    //+Title('4')
+                    //    +Link('primary')(href="#registration" onclick="umGlobal.scrollToTop('#registration')") Заполнить анкету
+
+        //.o-about__wrapper.js-wrapper
+        //    .o-about__picture.js-background
+        //        img(src="/img/bg.webp")
+        //    .o-about__left-hand.js-left-hand
+        //        img(src="/img/left-hand.webp")
+        //    .o-about__right-hand.js-right-hand
+        //        img(src="/img/right-hand.webp")
+

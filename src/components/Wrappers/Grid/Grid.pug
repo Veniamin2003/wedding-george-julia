@@ -1,0 +1,4 @@
+mixin Grid(cols = 1)
+    .w-grid(class!=cols&&"w-grid--"+cols)&attributes(attributes)
+        if block
+            block

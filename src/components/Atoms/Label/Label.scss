@@ -1,0 +1,15 @@
+.o-label {
+	height: 80px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	background-color: var(--primary-lighter-color);
+	color: var(--white-color);
+	font-size: 14px;
+	
+	& a {
+		text-decoration: underline;
+	}
+}

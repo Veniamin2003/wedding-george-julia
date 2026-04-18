@@ -1,0 +1,64 @@
+.m-question {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+    &__text {
+        font-size: 18px;
+        color: var(--basic-color);
+    }
+    &__items {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        font-size: 16px;
+        color: var(--basic-color);
+        -webkit-tap-highlight-color: transparent;
+    }
+    &__custom {
+        &-radio {
+            width: 14px;
+            height: 14px;
+            border: 1px solid var(--primary-lighter-color);
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 14px;
+            position: relative;
+        }
+    }
+
+    input[type="radio"] {
+        display: none;
+    }
+
+    input[type="radio"]:checked + &__custom-radio {
+        border: 1px solid #D6CCC2;
+        background-color: var(--primary-lighter-color);
+    }
+
+    &__input {
+        width: 100%;
+        opacity: 0.7;
+        pointer-events: none;
+        transition: var(--defaultTransition);
+
+        &.isActive {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+html.isFixed{
+    overflow: hidden;
+}
+
+// Классы для скрытия элементов на брейкпоинтах
+.isHiddenDesc {
+
+	@media (min-width: 1024px) {
+			display: none !important;
+	}
+}
+.isHiddenLaptop {
+
+	@media (max-width: 1440px) and (min-width: 1024px) {
+			display: none !important;
+	}
+}
+.isHiddenTab {
+
+	@media (max-width: 1023px) and (min-width: 768px) {
+			display: none !important;
+	}
+}
+.isHiddenMob {
+
+	@media (max-width: 767px) {
+			display: none !important;
+	}
+}

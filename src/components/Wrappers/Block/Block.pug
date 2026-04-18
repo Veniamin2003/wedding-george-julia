@@ -1,0 +1,13 @@
+mixin Block(title = 'Заголовок', linkLabel, linkHref, titleSize = 2)
+    +Container.w-block(class!=attributes.class)
+        .w-block__heading
+            .w-block__top
+                +Title(titleSize).w-block__title !{title}
+                if linkHref
+                    +Link('black')(href!=linkHref).isHiddenMob=linkLabel
+        if block
+            block
+
+        if linkHref
+            +Btn('primary')(href!=linkHref).w-block__btn.isHiddenDesc.isHiddenTab
+                span=linkLabel

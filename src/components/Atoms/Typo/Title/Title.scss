@@ -1,0 +1,55 @@
+.a-title {
+    font-weight: 400;
+
+    & span {
+        color: var(--primary-color);
+    }
+
+    &--1 {
+        font-size: 53px;
+        line-height: normal;
+
+        @media (max-width: 1023px) {
+        }
+        @media (max-width: 767px) {
+        }
+    }
+    &--2 {
+        font-size: 20px;
+        line-height: normal;
+
+        @media (max-width: 1023px) {
+        }
+        @media (max-width: 767px) {
+        }
+    }
+    &--3 {
+        font-size: 18px;
+        line-height: normal;
+
+        @media (max-width: 1023px) {
+        }
+        @media (max-width: 767px) {
+        }
+    }
+    &--4 {
+        font-size: 18px;
+        line-height: normal;
+        font-weight: 600;
+
+        @media (max-width: 1023px) {
+        }
+        @media (max-width: 767px) {
+
+        }
+    }
+    &--5 {
+
+        @media (max-width: 1023px) {
+
+        }
+        @media (max-width: 767px) {
+
+        }
+    }
+}

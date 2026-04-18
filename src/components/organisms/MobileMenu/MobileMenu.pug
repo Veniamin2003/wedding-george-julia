@@ -1,0 +1,12 @@
+mixin MobileMenu
+    .o-mobMenu-overlay.js-overlay-mob-menu
+    .o-mobMenu.js-mobile-menu
+        .o-mobMenu__items
+            +Link(href="#").o-mobMenu__item Пункт
+            +Link(href="#").o-mobMenu__item Пункт
+            +Link(href="#").o-mobMenu__item Пункт
+            +Link(href="#").o-mobMenu__item Пункт
+            +Link(href="#").o-mobMenu__item Пункт
+        .o-mobMenu__contacts 
+            +Link('primary')(href="mailto:mail@yandex.ru") mail@yandex.ru
+            +Link('primary')(href="tel:+7 (999) 999-99-99") +7 (999) 999-99-99

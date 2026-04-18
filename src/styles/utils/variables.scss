@@ -1,0 +1,31 @@
+:root {
+    --appHeight: 100vh;
+    --containerWidth: 295px;
+    --headerHeight: 100px;
+    --footerIndent: 130px;
+
+    --mainFont: 'VeranoSans';
+    --additionalFont: 'Gloriascript';
+    --additionalFont-2: 'Roslindale Cyrillic';
+
+    --basicTextSize: 18px;
+    --basicLineHeight: normal;
+
+    --scrollbarBg: #fff;
+    --scrollbarThumb: var(--green-color);
+    --scrollbarWidth: 7px;
+    --scrollbarBorder: none;
+    --scrollbarBorderRadius: 0;
+
+    --defaultTransition: all 0.3s ease-in-out;
+
+    @media (max-width: 1280px) {
+        --headerHeight: 60px;
+    }
+    @media (max-width: 1023px) {
+        --footerIndent: 50px;
+    }
+    @media (max-width: 767px) {
+
+    }
+}

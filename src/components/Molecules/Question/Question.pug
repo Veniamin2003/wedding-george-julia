@@ -1,0 +1,15 @@
+mixin Question(id, text, option1, option2, active, hasInput)
+    .m-question.js-question(data-has-input=hasInput ? "true" : "false")
+        p.m-question__text.js-question__text=text
+        .m-question__items
+            label.m-question__label
+                input(type="radio" name=id value=option1 checked=active==="option1")
+                span.m-question__custom-radio
+                | #{option1}
+            if hasInput
+                .m-question__input.js-question__input
+                    +Input('Напишите здесь количество, если да')
+            label.m-question__label
+                input(type="radio" name=id value=option2 checked=active==="option2")
+                span.m-question__custom-radio
+                | #{option2}

@@ -1,0 +1,6 @@
+mixin Input(label="Поле")
+    .a-input.js-input(class!=attributes.class)
+        .a-input__input
+            //.a-input__label=label
+            input(type="text" name!=attributes.name value!=attributes.value placeholder!=label).js-input__input
+        .a-input__error.js-input__error Текст ошибки

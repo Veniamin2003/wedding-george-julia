@@ -1,0 +1,16 @@
+.w-container {
+  max-width: calc(var(--containerWidth) + 60px);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+
+  @media (max-width: 1440px) {
+      max-width: calc(var(--containerWidth) + 40px);
+      padding: 0 20px;
+  }
+  @media (max-width: 1023px) {
+      max-width: calc(var(--containerWidth) + 30px);
+      margin: 0 auto;
+      padding: 0 15px;
+  }
+}

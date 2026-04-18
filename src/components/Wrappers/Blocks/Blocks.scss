@@ -1,0 +1,28 @@
+.w-blocks {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+
+    @media (max-width: 1023px) {
+        gap: 40px;
+    }
+
+    //&--first {
+    //    margin-top: 40px;
+    //
+    //    @media (max-width: 1023px) {
+    //        margin-top: 25px;
+    //    }
+    //}
+
+    & + & {
+        margin-top: 80px;
+
+        @media (max-width: 1023px) {
+            margin-top: 40px;
+        }
+        @media (max-width: 767px) {
+
+        }
+    }
+}

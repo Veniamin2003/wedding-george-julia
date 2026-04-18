@@ -1,0 +1,32 @@
+mixin Registration()
+    form.o-registration.js-form(id="registration")
+        .o-registration__top
+            .o-registration__text
+                +Title('4').o-registration__title Анкета гостя
+                .o-registration__desc Вы нам очень поможете, если <br>внимательно заполните анкету
+            .o-registration__name.js-input__name
+                +Input('Имя и фамилия')
+        .o-registration__items
+            +Question("q1", "Планируете ли быть на свадьбе?", "обязательно буду", "к сожалению, не смогу присутствовать", "option1")
+            +Question("q2", "Необходимо ли место, где остановиться?", "да", "нет", "option1")
+
+            .m-question.js-question(data-has-input="true")
+                p.m-question__text.js-question__text Будут ли с вами дети?
+                .m-question__items
+                    .m-question__wrap
+                        label.m-question__label
+                            input(type="radio" name="q3" value="да").js-question__children
+                            span.m-question__custom-radio
+                            | да
+                        .m-question__input.js-question__input
+                            +Input('Напишите здесь количество, если да')
+
+                    label.m-question__label
+                        input(type="radio" name="q3" value="нет" checked)
+                        span.m-question__custom-radio
+                        | нет
+
+            +Question("q4", "Будет ли у вас участие?", "да", "нет", "option1")
+
+        .o-registration__btn
+            +Btn(type="submit") Отправить

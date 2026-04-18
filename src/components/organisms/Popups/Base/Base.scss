@@ -1,0 +1,81 @@
+.o-popup {
+    position: fixed;
+    width: calc(100% - 30px);
+    max-height: 100vh;
+    padding: 70px 80px 80px;
+    bottom: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%,50%);
+    z-index: 250;
+    pointer-events: none;
+    transition: var(--defaultTransition);
+    border-radius: 10px;
+    border: 1px solid var(--grey-light-color);
+    background: var(--white-color);
+    overflow-y: auto;
+    scrollbar-width: 0px;
+
+    &.isVisible {
+        opacity: 1;
+        transform: translate(-50%,50%);
+        pointer-events: all;
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+
+    &__close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        & svg {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            fill: var(--primary-color);
+            transition: var(--defaultTransition);
+        }
+
+        &:hover {
+
+            & svg {
+                fill: var(--primary-color);
+            }
+        }
+
+        @media (max-width: 1023px) {
+            top: 15px;
+            right: 15px;
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    &--normal {
+        max-width: 660px;
+
+        @media (max-width: 1023px) {
+            padding: 35px;
+        }
+    }
+    &--small {
+        max-width: 430px;
+
+        @media (max-width: 1023px) {
+            padding: 50px 35px 65px;
+        }
+    }
+}

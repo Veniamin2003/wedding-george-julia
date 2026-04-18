@@ -1,0 +1,17 @@
+//- block: html
+//- style: 'primary' | 'transparent'
+mixin Btn(style = 'primary')
+    - var tag = attributes.href ? 'a' : 'button'
+
+    #{tag}(
+        class='a-btn a-btn--'+style
+        class!=attributes.class
+        onclick!=attributes.onclick
+        disabled!=attributes.disabled
+        href!=attributes.href
+        type!=attributes.type
+    )
+        if block
+            block
+        else
+            | Кнопка

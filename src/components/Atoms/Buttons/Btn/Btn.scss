@@ -1,0 +1,39 @@
+.a-btn {
+    height: 45px;
+    display: inline-flex;
+    padding: 12px 35px 13px;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+    background-color: var(--white-bg-color);
+    color: var(--primary-lighter-color);
+    border: 1px solid var(--primary-lighter-color);
+    border-radius: 12px;
+
+    &:active {
+        background-color: var(--primary-light-color);
+        color: var(--white-bg-color);
+    }
+
+    @media (hover: hover) {
+
+        &:hover {
+            background-color: var(--primary-light-color);
+            color: var(--white-bg-color);
+        }
+    }
+
+    &:disabled,
+    &.isDisabled {
+        pointer-events: none;
+        opacity: .7;
+    }
+
+    @media (hover: hover) {
+        transition: var(--defaultTransition);
+    }
+}

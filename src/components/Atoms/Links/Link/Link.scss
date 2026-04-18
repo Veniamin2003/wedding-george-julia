@@ -1,0 +1,51 @@
+.a-link {
+    display: inline-flex;
+    font-size: inherit;
+    line-height: inherit;
+    cursor: pointer;
+    font-weight: 600;
+
+    @media (max-width: 1023px) {
+
+    }
+
+    &--primary {
+        color: var(--primary-light-color);
+
+        &:active,
+        &.isActive {
+            color: var(--primary-color);
+        }
+
+        @media (hover: hover) {
+
+            &:hover {
+                color: var(--primary-color);
+            }
+        }
+    }
+    
+    &--white {
+        color: var(--white-color);
+
+        &:active,
+        &.isActive {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        @media (hover: hover) {
+
+            &:hover {
+                color: rgba(255, 255, 255, 0.7);
+            }
+        }
+    }
+
+    @media (hover: hover) {
+
+        &,
+        & svg {
+            transition: var(--defaultTransition);
+        }
+    }
+}

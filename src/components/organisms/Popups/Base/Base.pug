@@ -1,0 +1,11 @@
+//- size?: 'normal' | 'small'
+
+mixin BasePopup(popupId, size = 'normal')
+    .o-popup.js-popup(
+        class="o-popup--"+size
+        data-popup-id=popupId
+    )
+        .o-popup__close.js-popup__close
+            +svg('close')
+        if block
+            block

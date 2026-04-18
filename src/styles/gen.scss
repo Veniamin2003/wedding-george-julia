@@ -1,0 +1,222 @@
+@import "./utils/color";
+@import "./utils/variables";
+@import "./utils/fonts";
+@import "./utils/states";
+
+* {
+	box-sizing: border-box;
+	font-family: var(--mainFont), sans-serif;
+}
+
+html,
+body {
+	scrollbar-width: var(--scrollbarWidth);
+	scrollbar-color: var(--scrollbarThumb) var(--scrollbarBg);
+	font-family: var(--mainFont), sans-serif;
+
+	@media (max-width: 1023px) {
+		padding: 0;
+	}
+
+	&::-webkit-scrollbar {
+		width: var(--scrollbarWidth);
+	}
+
+	&::-webkit-scrollbar-track {
+		background: var(--scrollbarBg);
+		border-radius: var(--scrollbarBorderRadius);
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: var(--scrollbarThumb);
+		border-radius: var(--scrollbarBorderRadius);
+		border: var(--scrollbarBorder);
+	}
+
+	::selection {
+		background-color: var(--basic-color);
+		color: #FFFFFF;
+	}
+}
+
+@media screen and (max-width: 550px) {
+	html.touch *:hover {
+		all: unset !important;
+	}
+}
+
+a {
+	-webkit-tap-highlight-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+dd,
+dt {
+	margin: 0;
+}
+
+input {
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+}
+
+html {
+	overflow-x: hidden;
+}
+
+body {
+	margin: 0;
+	font-size: var(--basicTextSize);
+	line-height: var(--basicLineHeight);
+	font-weight: 400;
+	color: var(--basic-color);
+	min-height: 100vh;
+	background: var(--white-color);
+	min-width: 375px;
+	max-width: 100%;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+main {
+	width: 100%;
+	//margin-top: var(--headerHeight);
+	//padding-bottom: var(--footerIndent);
+	overflow: hidden;
+	z-index: 5;
+
+}
+
+.isDisabedHighlight,
+input,
+textarea,
+button,
+select,
+a {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	color: inherit;
+}
+
+button {
+	touch-action: manipulation;
+}
+
+img {
+	max-width: 100%;
+}
+
+a {
+	text-decoration: none;
+	color: var(--basic-color);
+	touch-action: manipulation;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+button {
+	padding: 0;
+	border-style: solid;
+	border: none;
+}
+
+svg {
+	display: block;
+}
+
+ul,
+ol {
+	padding: 0;
+	margin: 0;
+}
+
+ul {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	list-style-type: none;
+
+	@media (max-width: 1023px) {
+		gap: 8px;
+	}
+
+	& li {
+		position: relative;
+        padding-left: 14px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 11px;
+            left: 0;
+            width: 4px;
+            height: 4px;
+            background-color: var(--basic-color);
+        }
+	}
+}
+
+input,
+textarea,
+label {
+	outline: none;
+}
+
+textarea {
+	resize: none;
+}
+
+p {
+	margin: 0;
+}
+
+input:not([type="checkbox"]):not([type="radio"]),
+textarea,
+select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+@import '../components/Atoms/Typo/Title/Title';
+@import '../components/Atoms/Buttons/Btn/Btn';
+@import '../components/Atoms/Links/Link/Link';
+@import '../components/Atoms/Fields/Input/Input';
+@import '../components/Atoms/Label/Label';
+
+@import '../components/Wrappers/Container/Container';
+@import '../components/Wrappers/Blocks/Blocks';
+@import '../components/Wrappers/Block/Block';
+@import '../components/Wrappers/Grid/Grid';
+@import '../components/Wrappers/Content/Content';
+@import '../components/Wrappers/AnimatedShow/AnimatedShow';
+
+@import '../components/Molecules/Question/Question';
+
+@import '../components/Organisms/Fscreen/Fscreen';
+@import '../components/Organisms/About/About';
+@import '../components/Organisms/Location/Location';
+@import '../components/Organisms/Dress/Dress';
+@import '../components/Organisms/Registration/Registration';
+@import '../components/Organisms/Bottom/Bottom';
+@import '../components/Organisms/BtnUp/BtnUp';
+@import '../components/Organisms/Cookie/Cookie';
+@import '../components/Organisms/Notify/Notify';
+@import '../components/Organisms/Header/Header';
+@import '../components/Organisms/MobileMenu/MobileMenu';
+@import '../components/Organisms/Footer/Footer';
+@import '../components/Organisms/Popups/Overlay/Overlay';
+@import '../components/Organisms/Popups/Base/Base';
+@import '../components/Organisms/Popups/Form/Form';
+@import '../components/Organisms/Popups/Success/Success';
+
+

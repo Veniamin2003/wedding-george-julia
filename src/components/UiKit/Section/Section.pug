@@ -1,0 +1,6 @@
+mixin UiSection(title)
+    .ui-section
+        h2=title
+        if block 
+            .ui-section__content
+                block

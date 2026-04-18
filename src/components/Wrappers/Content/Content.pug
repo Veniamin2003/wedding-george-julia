@@ -1,0 +1,6 @@
+mixin Content()
+    .w-content(class!=attributes.class)
+        if block
+            block
+        else
+            | Контент

@@ -1,0 +1,48 @@
+@font-face {
+  font-family: 'Roslindale Cyrillic';
+  src: url('../fonts/RoslindaleCyrillic.woff2') format('woff2'),
+      url('../fonts/RoslindaleCyrillic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gloriascript';
+  src: url('../fonts/Gloriascript.woff2') format('woff2'),
+      url('../fonts/Gloriascript.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'VeranoSans';
+  src: url('../fonts/VeranoSans-Bold.woff2') format('woff2'),
+      url('../fonts/VeranoSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'VeranoSans';
+  src: url('../fonts/VeranoSans-Medium.woff2') format('woff2'),
+      url('../fonts/VeranoSans-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'VeranoSans';
+  src: url('../fonts/VeranoSans-Regular.woff2') format('woff2'),
+      url('../fonts/VeranoSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'VeranoSans';
+  src: url('../fonts/VeranoSans-Light.woff2') format('woff2'),
+      url('../fonts/VeranoSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}

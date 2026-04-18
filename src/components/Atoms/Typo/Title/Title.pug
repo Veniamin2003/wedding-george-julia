@@ -1,0 +1,8 @@
+//- size: '1' | '2' | '3' | '4' | '5'
+//- block: html
+mixin Title(size = '1')
+    .a-title(class="a-title--"+size class!=attributes.class)
+        if block 
+            block 
+        else 
+            | Заголовок

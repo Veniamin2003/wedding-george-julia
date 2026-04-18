@@ -1,0 +1,5 @@
+mixin svg(name,mod)
+	- mod = mod || ''
+	- var sprite = "/img/symbol/symbol.svg?v=1.1.1"
+	svg(class="icon icon-" + name + ' ' + mod class!=attributes.class)
+		use(xlink:href= sprite + '#' + name)

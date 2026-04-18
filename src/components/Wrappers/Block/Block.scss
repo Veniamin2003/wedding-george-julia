@@ -1,0 +1,25 @@
+.w-block {
+	display: flex;
+	flex-direction: column;
+	gap: 35px;
+
+	@media (max-width: 1023px) {
+        gap: 20px;
+	}
+
+	&__top {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 20px;
+	}
+	
+	&__title {
+		max-width: 1105px;
+	}
+
+	&__btn {
+		margin-top: 5px;
+	}
+}
