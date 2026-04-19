@@ -32,6 +32,7 @@ const toggleInputVisibility = (question) => {
 -------------------------------- */
 
 const SUBMIT_TIMEOUT = 60_000; // 1 минута
+const REQUEST_TIMEOUT_MS = 60_000; // ожидание ответа сервера
 const STORAGE_KEY = 'registration_last_submit';
 
 const canSubmit = () => {
@@ -63,9 +64,20 @@ const hideFormError = (errorBox) => {
 
 export const Registration = () => {
     const form = document.querySelector('.js-form');
-    const errorBox = form.querySelector('.js-popup__error');
-
     if (!form) return;
+
+    const errorBox = form.querySelector('.js-popup__error');
+    const loaderEl = form.querySelector('.js-registration-loader');
+    const submitBtn = form.querySelector('.js-registration-submit');
+
+    let isSubmitting = false;
+
+    const setLoading = (loading) => {
+        loaderEl?.classList.toggle('isVisible', loading);
+        loaderEl?.setAttribute('aria-hidden', loading ? 'false' : 'true');
+        if (submitBtn) submitBtn.disabled = loading;
+        form.setAttribute('aria-busy', loading ? 'true' : 'false');
+    };
 
     /* ---------- Init questions ---------- */
 
@@ -85,6 +97,8 @@ export const Registration = () => {
 
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
+
+        if (isSubmitting) return;
 
         // Антиспам: таймаут между отправками
         if (!canSubmit()) {
@@ -159,44 +173,87 @@ export const Registration = () => {
 
         if (hasValidationError) return;
 
-        /* ---- Telegram ---- */
-
-        const BOT_TOKEN = '7503385274:AAH8Ce4D_J8G3fdJW27rz7gePNN6mWom6ww';
-        const CHAT_ID = '-5167630954';
-
         const message = `📩 Новая анкета гостя:\n\n👤 Имя: ${nameInput.value}\n\n${answers.join(
             '\n\n'
         )}`;
 
-        try {
-            const response = await fetch(
-                `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`,
-                {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        chat_id: CHAT_ID,
-                        text: message,
-                    }),
-                }
-            );
+        isSubmitting = true;
+        setLoading(true);
+        hideFormError(errorBox);
 
-            if (response.ok) {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+
+        try {
+            const response = await fetch('/send-to-telegram.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: message }),
+                signal: controller.signal,
+            });
+
+            let result = {};
+            try {
+                const text = await response.text();
+                if (text) result = JSON.parse(text);
+            } catch {
+                result = {};
+            }
+
+            if (response.ok && result.success) {
                 saveSubmitTime();
                 hideFormError(errorBox);
                 form.reset();
 
-                // сброс отображения инпутов
                 form
                     .querySelectorAll('.js-question[data-has-input="true"]')
                     .forEach(toggleInputVisibility);
 
                 umGlobal?.togglePopup?.('registration', false, false);
                 umGlobal?.togglePopup?.('success', true);
+            } else {
+                let errMsg =
+                    typeof result.error === 'string' && result.error.trim()
+                        ? result.error
+                        : '';
 
+                if (!errMsg) {
+                    if (response.status === 404) {
+                        errMsg =
+                            'Сервис отправки не найден (404). Пожалуйста, попробуйте позже или напишите нам напрямую 🙏';
+                    } else if (!response.ok) {
+                        errMsg = `Ошибка сервера (${response.status}). Пожалуйста, попробуйте позже или свяжитесь с нами напрямую 🙏`;
+                    } else {
+                        errMsg =
+                            'Ошибка отправки. Пожалуйста, попробуйте позже или свяжитесь с нами напрямую 🙏';
+                    }
+                }
+
+                showFormError(errorBox, errMsg);
             }
         } catch (error) {
-            console.error('Telegram error:', error);
+            console.error('Send error:', error);
+
+            if (error.name === 'AbortError') {
+                showFormError(
+                    errorBox,
+                    'Запрос занял слишком много времени. Проверьте соединение и попробуйте снова 🙏'
+                );
+            } else if (error instanceof TypeError) {
+                showFormError(
+                    errorBox,
+                    'Не удалось связаться с сервером. Проверьте интернет и попробуйте снова 🙏'
+                );
+            } else {
+                showFormError(
+                    errorBox,
+                    'Ошибка отправки. Пожалуйста, попробуйте позже или свяжитесь с нами напрямую 🙏'
+                );
+            }
+        } finally {
+            clearTimeout(timeoutId);
+            isSubmitting = false;
+            setLoading(false);
         }
     });
 };

@@ -1,6 +1,8 @@
 mixin RegistrationPopup
     +BasePopup('registration', 'all')
         form.o-registration-popup.js-form
+            .o-registration-popup__loader.js-registration-loader(aria-hidden="true")
+                span.o-registration-popup__loader-spinner
             .o-registration-popup__top
                 .o-registration-popup__text
                     +Title('1').o-registration-popup__title Анкета гостя
@@ -17,14 +19,14 @@ mixin RegistrationPopup
                                 span.m-question__custom-radio
                                 | обязательно буду
                             .m-question__input.js-question__input
-                                +Input('Количество гостей, которые будут с вами', false, true)
+                                +Input('Количество гостей, которые будут с Вами', false, true)
         
                         label.m-question__label
                             input(type="radio" name="q1" value="нет")
                             span.m-question__custom-radio
                             | к сожалению, не смогу присутствовать
 
-            +Btn('black')(type="submit").o-registration-popup__btn Отправить
+            +Btn('black')(type="submit").o-registration-popup__btn.js-registration-submit Отправить
             .o-registration-popup__exit.js-popup__close Выйти
 
             .o-registration-popup__error.js-popup__error 

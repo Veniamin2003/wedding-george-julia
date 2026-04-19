@@ -23,9 +23,16 @@ export function initPreview() {
 		finish();
 	};
 
+	const onWindowScrollDismiss = () => {
+		dismiss();
+	};
+
 	const dismiss = () => {
 		preview.removeEventListener("click", dismiss);
 		preview.removeEventListener("keydown", onKeyDown);
+		window.removeEventListener("scroll", onWindowScrollDismiss, true);
+		window.removeEventListener("wheel", onWindowScrollDismiss);
+		window.removeEventListener("touchmove", onWindowScrollDismiss);
 		preview.classList.add("is-dismissed");
 		preview.addEventListener("transitionend", onTransitionEnd);
 		fallbackId = setTimeout(finish, FADE_MS + 80);
@@ -40,4 +47,8 @@ export function initPreview() {
 
 	preview.addEventListener("click", dismiss);
 	preview.addEventListener("keydown", onKeyDown);
+
+	window.addEventListener("scroll", onWindowScrollDismiss, { capture: true, passive: true });
+	window.addEventListener("wheel", onWindowScrollDismiss, { passive: true });
+	window.addEventListener("touchmove", onWindowScrollDismiss, { passive: true });
 }
