@@ -9,23 +9,10 @@
     font-weight: 400;
     line-height: normal;
     cursor: pointer;
-    color: var(--white-color);
-    background-color: transparent;
-    border: 1px solid var(--white-color-60);
+    
     border-radius: 12px;
 
-    &:active {
-        background-color: var(--white-color);
-        color: var(--basic-color);
-    }
-
-    @media (hover: hover) {
-
-        &:hover {
-            background-color: var(--white-color);
-            color: var(--basic-color);
-        }
-    }
+    
 
     &:disabled,
     &.isDisabled {
@@ -35,5 +22,42 @@
 
     @media (hover: hover) {
         transition: var(--defaultTransition);
+    }
+
+    &--white {
+        color: var(--white-color);
+        background-color: transparent;
+        border: 1px solid var(--white-color-60);
+
+        &:active {
+            background-color: var(--white-color);
+            color: var(--basic-color);
+        }
+    
+        @media (hover: hover) {
+    
+            &:hover {
+                background-color: var(--white-color);
+                color: var(--basic-color);
+            }
+        }
+    }
+    &--black {
+        color: var(--basic-color);
+        background-color: transparent;
+        border: 1px solid var(--basic-color);
+
+        &:active {
+            background-color: var(--basic-color);
+            color: var(--white-color);
+        }
+    
+        @media (hover: hover) {
+    
+            &:hover {
+                background-color: var(--basic-color);
+                color: var(--white-color);
+            }
+        }
     }
 }

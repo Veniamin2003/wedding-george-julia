@@ -7,10 +7,13 @@ mixin Bottom()
             .o-bottom__vector-btm 
                 img(src="/img/vectors/bottom-btm.svg")
 
-        .o-bottom__content.w-container
-            +Title('2').o-bottom__title Если у вас остались вопросы, <br>обращайтесь к нам
-            .o-bottom__contacts
-                span Иосиф, <a href="tel:+79522402152">+7 (952) 240-21-52</a>
-                span Надежда, <a href="tel:+79092955403">+7 (909) 295-54-03</a>
+        .w-container
+            .o-bottom__content
+                +AnimatedShow
+                    +Title('2').o-bottom__title Если у вас остались вопросы, <br>обращайтесь к нам
+                +AnimatedShow
+                    .o-bottom__contacts
+                        span <a href="tel:+79522402152">+7 (952) 240-21-52</a>, Георгий
+                        span <a href="tel:+79092955403">+7 (909) 295-54-03</a>, Юлия
 
         

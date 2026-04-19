@@ -9,6 +9,8 @@ import { setAppHeight } from "./modules/setAppHeight.js";
 import { urlGenerator } from "./modules/urlGenerator.js";
 import { InputMasks, Registration} from "../components/organisms/Popups/Registration/Registration.js";
 import {TimeCounter} from "../components/organisms/About/About.js";
+import { initPreview } from "../components/organisms/Preview/Preview.js";
+import { animatedShow } from "../components/Wrappers/AnimatedShow/AnimatedShow.js";
 
 document.addEventListener("DOMContentLoaded", function () {
 	try {
@@ -27,6 +29,9 @@ document.addEventListener("DOMContentLoaded", function () {
 		umGlobal.togglePopup = togglePopup();
 
 		TimeCounter();
+
+		initPreview();
+		animatedShow();
 
 		Registration();
 		// InputHide();

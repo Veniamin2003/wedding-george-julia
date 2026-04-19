@@ -162,7 +162,7 @@ export const Registration = () => {
         /* ---- Telegram ---- */
 
         const BOT_TOKEN = '7503385274:AAH8Ce4D_J8G3fdJW27rz7gePNN6mWom6ww';
-        const CHAT_ID = '-5264381833';
+        const CHAT_ID = '-5167630954';
 
         const message = `📩 Новая анкета гостя:\n\n👤 Имя: ${nameInput.value}\n\n${answers.join(
             '\n\n'

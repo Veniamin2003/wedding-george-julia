@@ -2,15 +2,15 @@ mixin About
     .o-about.w-container
         .o-about__content
             .o-about__block
-                .o-about__quote
+                +AnimatedShow.o-about__quote
                     +Title('2').o-about__quote-title Да будет милость Твоя, Господи, над нами, как мы уповаем на Тебя
                     +Title('3').o-about__quote-desc Псалом 32,22
 
-                .o-about__invite
+                +AnimatedShow.o-about__invite
                     +Title('2').o-about__invite-text Дорогие родные и друзья!
                     +Title('3').o-about__invite-desc Приглашаем Вас разделить радость особенного для нас события — нашей свадьбы!
 
-            .o-about__time
+            +AnimatedShow.o-about__time
                 +Title('2').o-about__time-title До дня торжества
                 .o-about__time-items
                     .o-about__time-item

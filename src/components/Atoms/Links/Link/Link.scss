@@ -9,6 +9,14 @@
 
     }
 
+    @media (hover: hover) {
+
+        &,
+        & svg {
+            transition: var(--defaultTransition);
+        }
+    }
+
     &--primary {
         color: var(--green-color);
 
@@ -41,11 +49,19 @@
         }
     }
 
-    @media (hover: hover) {
+    &--green {
+        color: var(--green-color);
 
-        &,
-        & svg {
-            transition: var(--defaultTransition);
+        &:active,
+        &.isActive {
+            color: var(--basic-color);
+        }
+
+        @media (hover: hover) {
+
+            &:hover {
+                color: var(--basic-color);
+            }
         }
     }
 }

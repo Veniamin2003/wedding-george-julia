@@ -1,29 +1,30 @@
+const DEFAULT_IO_OPTIONS = {
+	threshold: 0.12,
+	rootMargin: "0px 0px -7% 0px",
+};
 
-function addObserver(el, options) {
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                if (options.cb) {
-                    options.cb(entry.target);
-                }
-                observer.unobserve(entry.target);
-            }
-        });
-    }, options);
-    
-    observer.observe(el);
-}
+/**
+ * Появление блоков при скролле. Класс `isVisible` синхронизуется с видимостью
+ * во вьюпорте — при уходе блока за экран анимация сбрасывается и сработает снова.
+ */
+export function animatedShow(userOptions = {}) {
+	const options = { ...DEFAULT_IO_OPTIONS, ...userOptions };
+	const els = document.querySelectorAll(".js-animatedShow");
 
-export const animatedShow = () => {
-    const options = {
-        rootMargin: "-90px",
-        cb: (el) => {
-            el.classList.add("isVisible");
-        },
-    };
-    const els = document.querySelectorAll('.js-animatedShow');
+	if (!els.length) {
+		return;
+	}
 
-    els.forEach((el) => {
-        addObserver(el, options);
-    });
+	if (typeof IntersectionObserver === "undefined") {
+		els.forEach((el) => el.classList.add("isVisible"));
+		return;
+	}
+
+	const observer = new IntersectionObserver((entries) => {
+		for (const entry of entries) {
+			entry.target.classList.toggle("isVisible", entry.isIntersecting);
+		}
+	}, options);
+
+	els.forEach((el) => observer.observe(el));
 }

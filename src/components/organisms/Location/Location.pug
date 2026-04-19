@@ -1,22 +1,28 @@
 mixin Locaion
     .o-location
+        .o-location__vector-top
+            img(src="/img/vectors/middle-top.svg")
         .o-location__picture 
-            .o-location__vector-top 
-                img(src="/img/vectors/middle-top.svg")
+            //- .o-location__vector-top.isHiddenDesc
+            //-     img(src="/img/vectors/middle-top.svg")
             img(src="/img/middle.webp")
             .o-location__vector-btm
                 img(src="/img/vectors/middle-btm.svg")
         .o-location__wrapper.w-container
             .o-location__anket
-                .o-location__anket-content
-                    +Title('1').o-location__anket-title Анкета гостя
-                    .o-location__anket-desc Пожалуйста, дайте нам знать, <br>если Вы будете присутствовать <br>на мероприятии. До 30 мая <br>заполните анкету гостя
-                +Btn().o-location__anket-btn.js-form-btn(onclick="umGlobal.togglePopup('registration', true);") Заполнить 
+                +AnimatedShow
+                    .o-location__anket-content
+                        +Title('1').o-location__anket-title Анкета гостя
+                        .o-location__anket-desc Пожалуйста, дайте нам знать, <br>если Вы будете присутствовать <br>на мероприятии. До 30 мая <br>заполните анкету гостя
+                +AnimatedShow
+                    +Btn().o-location__anket-btn.js-form-btn(onclick="umGlobal.togglePopup('registration', true);") Заполнить 
             .o-location__location
-                .o-location__location-text
-                    +Title('1').o-location__location-title Локация
-                    .o-location__location-desc Санкт-Петербург, Сергиево <br>ул. Куйбышева, 2
-                +Link('white')(href="https://yandex.ru/maps/-/CHB~F0JC" target="_blank").o-location__location-link Посмотреть на карте
+                +AnimatedShow
+                    .o-location__location-text
+                        +Title('1').o-location__location-title Локация
+                        .o-location__location-desc Санкт-Петербург, Сергиево <br>ул. Куйбышева, 2
+                +AnimatedShow
+                    +Link('white')(href="https://yandex.ru/maps/-/CHB~F0JC" target="_blank").o-location__location-link Посмотреть на карте
                 //- .o-location__location-vector
                 //-     img(src="/img/vectors/locate-btm.svg")
 

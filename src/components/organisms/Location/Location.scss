@@ -12,8 +12,13 @@
         aspect-ratio: 188/281;
         width: 100%;
         height: auto;
-        overflow: hidden;
-        max-height: 1400px;
+        max-height: 1700px;
+        max-width: 500px;
+        margin-top: 80px;
+
+        @media (max-width: 1023px) {
+            margin-top: 0;
+        }
 
         & img {
             width: 100%;
@@ -37,6 +42,7 @@
             aspect-ratio: 360/48;
             width: 100%;
             height: auto;
+            z-index: 10;
 
             & img {
                 width: 100%;
@@ -49,9 +55,10 @@
         &-btm {
             position: absolute;
             bottom: -2px;
-            left: 0;
+            left: -5px;
+            right: -5px;
             aspect-ratio: 356/40;
-            width: 100%;
+            width: calc(100% + 10px);
             height: auto;
            
             & img {

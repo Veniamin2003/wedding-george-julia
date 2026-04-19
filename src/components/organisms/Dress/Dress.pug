@@ -3,9 +3,11 @@ mixin Dress()
         .o-dress__vector 
             img(src="/img/vectors/locate-btm.svg")
         .o-dress__text
-            +Title('1').o-dress__title Дресс-код
-            .o-dress__desc Нам будет очень приятно, если <br>Вы поддержите цветовую <br>гамму торжества
-        .o-dress__colors
+            +AnimatedShow
+                +Title('1').o-dress__title Дресс-код
+            +AnimatedShow
+                .o-dress__desc Нам будет очень приятно, если <br>Вы поддержите цветовую <br>гамму торжества
+        .o-dress__colors.o-dress__colors--reveal.js-animatedShow
             .o-dress__color
                 img(src="/img/dress/color-1.png")
             .o-dress__color

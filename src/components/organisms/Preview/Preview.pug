@@ -1,0 +1,11 @@
+mixin Preview
+    .o-preview.js-preview(
+        role="button"
+        tabindex="0"
+        aria-label="Открыть приглашение"
+    )
+        .o-preview__initials 
+             img(src="/img/initials.svg")
+        .o-preview__picture
+            img(src="/img/envelope.webp" alt="Приглашение" decoding="async" fetchpriority="high")
+        .o-preview__text Для просмотра коснитесь экрана

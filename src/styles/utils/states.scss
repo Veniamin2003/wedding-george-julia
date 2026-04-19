@@ -1,5 +1,11 @@
-html.isFixed{
+html.isFixed {
     overflow: hidden;
+    height: 100%;
+}
+
+html.isFixed body {
+    overflow: hidden;
+    overscroll-behavior: none;
 }
 
 // Классы для скрытия элементов на брейкпоинтах

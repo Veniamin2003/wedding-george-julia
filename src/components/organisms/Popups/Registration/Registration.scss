@@ -17,6 +17,9 @@
 		color: var(--basic-color);
 	}
 	
+	&__title {
+		font-family: var(--additionalFont), sans-serif;
+	}
 	&__desc {
 		text-align: center;
 	}
@@ -34,7 +37,7 @@
 	
 	&__btn {
 		width: 286px;
-		margin: 35px auto 0;
+		margin: 64px auto 0;
 		display: flex;
 		justify-content: center;
 		
@@ -48,7 +51,7 @@
 		color: rgba(59, 46, 17, 0.58);
 		cursor: pointer;
 		width: max-content;
-		margin: 15px auto 0;
+		margin: 20px auto 0;
 		
 		@media (max-width: 1023px) {
 			font-size: 14px;

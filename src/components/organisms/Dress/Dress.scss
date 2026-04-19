@@ -3,8 +3,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-top: 200px;
     gap: 30px;
 
+    @media (max-width: 1023px) {
+        padding-top: 120px;
+    }
     &__text {
         display: flex;
         flex-direction: column;
@@ -15,6 +19,7 @@
 
     &__title {
         font-family: var(--additionalFont), sans-serif;
+        text-align: center;
     }
 
     &__desc {
@@ -27,6 +32,29 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 20px;
         padding: 0 18px;
+
+        &--reveal .o-dress__color {
+            opacity: 0;
+            transform: translate3d(0, 22px, 0);
+            transition:
+                opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        &--reveal.isVisible .o-dress__color {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+
+        &--reveal:not(.isVisible) .o-dress__color {
+            transition-delay: 0s;
+        }
+
+        @for $i from 1 through 8 {
+            &--reveal.isVisible .o-dress__color:nth-child(#{$i}) {
+                transition-delay: #{(($i - 1) * 0.065)}s;
+            }
+        }
     }
 
     &__color {
@@ -43,8 +71,23 @@
         }
     }
 
+    @media (prefers-reduced-motion: reduce) {
+        &__colors--reveal .o-dress__color {
+            opacity: 1;
+            transform: none;
+            transition: none;
+        }
+    }
+
     &__vector {
-        width: 100%;
+        position: absolute;
+        top: -1px;
+        left: -5px;
+        right: -5px;
+        z-index: 10;
+        width: calc(100% + 10px);
+        height: auto;
+        aspect-ratio: 375 / 42;
         
         & img {
             width: 100%;
